@@ -20,5 +20,33 @@
                     </button>
                 </form>
 		</div>
+        <div>
+            <h4>Comments</h4>
+    
+            <div>
+                {#each data.comments as comment}
+                    <p>
+                        <span>{comment.name}:</span>
+                        {comment.text}
+                    </p>
+                {/each}
+            </div>
+    
+            <form action="?/commentPhoto" method="POST" use:enhance>
+                <input type="hidden" name="article_id" value={article.id} />
+    
+                <div>
+                    <label for="name">Your Name</label>
+                    <input type="text" name="name" required />
+                </div>
+    
+                <div>
+                    <label for="text">Your Comment</label>
+                    <textarea name="text" required></textarea>
+                </div>
+    
+                <button type="submit">Add Comment</button>
+            </form>
+        </div>
 	{/each}
 </div>

@@ -8,9 +8,13 @@ export async function load({params}) {
         'SELECT * FROM articles where id = ?',
         [id]
     );
+    let [comments] = await connection.execute('SELECT * FROM comments WHERE article_id = ?', 
+        [id]
+    );
 
     return {
-        articles: rows
+        articles: rows,
+        comments: comments
     };
 }
 
@@ -30,5 +34,24 @@ export const actions = {
 		} else {
 			return { error: 'ERROR' };
 		}
+	},
+
+    commentPhoto: async ({ request }) => {
+		const formData = await request.formData();
+		const id = formData.get('article_id');
+		const user = formData.get('name');
+		const comment = formData.get('text');
+
+		const connection = await createConnection();
+
+		const [result] = await connection.execute(
+			'INSERT INTO comments (article_id, name, text) VALUES (?, ?, ?)',
+			[id, user, comment]
+		);
+
+		return {
+			status: 303,
+			location: `/articles/${id}`
+		};
 	}
 };
