@@ -14,14 +14,12 @@
 				transition:slide
 				class="bg-white rounded-2xl shadow-md p-6 grid md:grid-cols-2 gap-6 items-start"
 			>
-				<!-- Left: Image -->
 				<img
 					src={article.image}
 					alt="articleImage"
 					class="w-full h-72 object-cover rounded-lg"
 				/>
 
-				<!-- Right: Content -->
 				<div class="space-y-4">
 					<p class="text-gray-800 font-medium">{article.author}: {article.description}</p>
 					<p class="text-sm text-gray-600">Votes: {article.votes}</p>
