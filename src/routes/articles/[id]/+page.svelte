@@ -13,6 +13,12 @@
             <img src={article.image} alt="articleImage">
             <p>{article.author}: {article.description}</p>
 			<p>Votes: {article.votes}</p>
+                <form action="?/upvotePhoto" method="POST" use:enhance>
+                    <input type="hidden" name="id" value={article.id} />
+                    <button type="submit" aria-label="likePhoto">
+                        <img src="https://uhxn3r42f8ubxtek.public.blob.vercel-storage.com/Projekt/like-LN0T5Ev7SxqPYVwPm4WVh786qQO64H.png" alt="likePhoto">
+                    </button>
+                </form>
 		</div>
 	{/each}
 </div>
