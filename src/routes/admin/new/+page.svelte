@@ -4,6 +4,8 @@
 
 <h1>CREATE A NEW ARTICLE</h1>
 
+<a href="/admin">BACK TO ADMIN DASHBOARD</a>
+
 <form method="POST" action="?/createArticle" enctype="multipart/form-data" use:enhance>
 	<label for="image">IMAGE</label>
 	<input type="file" placeholder="Image" name="image" />

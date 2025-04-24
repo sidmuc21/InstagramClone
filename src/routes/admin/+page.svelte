@@ -8,6 +8,7 @@
 <h1>ADMIN DASHBOARD - ARTICLES</h1>
 
 <a href="/admin/new">CREATE A NEW ARTICLE</a>
+<a href="/">BACK TO HOMEPAGE</a>
 
 <form action="/logout?/logout" method="POST">
     <button class="logout" type="submit">Logout</button>
