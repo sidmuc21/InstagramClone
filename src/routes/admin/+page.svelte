@@ -5,25 +5,50 @@
 	let { data } = $props();
 </script>
 
-<h1>ADMIN DASHBOARD - ARTICLES</h1>
+<div class="min-h-screen bg-gray-50 px-6 py-10 space-y-8">
+	<h1 class="text-3xl font-bold text-gray-800 text-center">Admin Dashboard – Articles</h1>
 
-<a href="/admin/new">CREATE A NEW ARTICLE</a>
-<a href="/">BACK TO HOMEPAGE</a>
+	<div class="flex justify-center gap-6 flex-wrap text-sm font-medium">
+        <a href="/" class="text-gray-700 hover:underline">← Back to Homepage</a>
 
-<form action="/logout?/logout" method="POST">
-    <button class="logout" type="submit">Logout</button>
-</form>
+		<a href="/admin/new" class="text-blue-600 hover:underline">+ Create New Article</a>
 
-<div>
-	{#each data.articles as article (article.id)}
-		<div transition:slide>
-            <img src={article.image} alt="articleImage">
-			<p>{article.id} - {article.author} - {article.description} - {article.votes}</p>
+		<form action="/logout?/logout" method="POST">
+			<button type="submit" class="text-red-500 hover:underline">Logout</button>
+		</form>
+	</div>
 
-			<form action="?/deleteArticle" method="POST" use:enhance>
-				<input type="hidden" name="id" value={article.id} />
-				<button type="submit">Delete</button>
-			</form>
-		</div>
-	{/each}
+	<div class="grid gap-6 max-w-6xl mx-auto">
+		{#each data.articles as article (article.id)}
+			<div
+				transition:slide
+				class="bg-white p-5 rounded-xl shadow-md flex flex-col md:flex-row gap-5 items-start"
+			>
+				<img
+					src={article.image}
+					alt="articleImage"
+					class="w-full md:w-48 h-32 object-cover rounded-md"
+				/>
+
+				<div class="flex-1 space-y-2">
+					<p class="text-gray-800">
+						<strong>ID:</strong> {article.id} <br />
+						<strong>Author:</strong> {article.author} <br />
+						<strong>Description:</strong> {article.description} <br />
+						<strong>Votes:</strong> {article.votes}
+					</p>
+
+					<form action="?/deleteArticle" method="POST" use:enhance>
+						<input type="hidden" name="id" value={article.id} />
+						<button
+							type="submit"
+							class="mt-2 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+						>
+							Delete
+						</button>
+					</form>
+				</div>
+			</div>
+		{/each}
+	</div>
 </div>
