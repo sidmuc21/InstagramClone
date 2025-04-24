@@ -5,12 +5,13 @@
 	let { data } = $props();
 </script>
 
-<h1>InstagramClone</h1>
+<a href="/">Back</a>
 
 <div>
 	{#each data.articles as article (article.id)}
 		<div transition:slide>
-            <a href={`/articles/${article.id}`}><img src={article.image} alt="articleImage"></a>
+            <img src={article.image} alt="articleImage">
+            <p>{article.author}: {article.description}</p>
 			<p>Votes: {article.votes}</p>
 		</div>
 	{/each}
