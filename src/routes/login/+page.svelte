@@ -20,7 +20,7 @@
 				name="email"
 				id="email"
 				required
-				class="mt-1 w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+				class="mt-1 w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-[#5279bf]"
 			/>
 		</div>
 
@@ -31,13 +31,13 @@
 				name="password"
 				id="password"
 				required
-				class="mt-1 w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+				class="mt-1 w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-[#5279bf]"
 			/>
 		</div>
 
 		<button
 			type="submit"
-			class="w-full bg-blue-600 text-white font-semibold py-2 rounded-xl hover:bg-blue-700 transition-colors"
+			class="w-full bg-[#5279bf] text-white font-semibold py-2 rounded-xl hover:bg-[#3c5a8f] transition-colors"
 		>
 			Login
 		</button>

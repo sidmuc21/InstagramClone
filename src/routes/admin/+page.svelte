@@ -11,10 +11,10 @@
 	<div class="flex justify-center gap-6 flex-wrap text-sm font-medium">
         <a href="/" class="text-gray-700 hover:underline">← Back to Homepage</a>
 
-		<a href="/admin/new" class="text-blue-600 hover:underline">+ Create New Article</a>
+		<a href="/admin/new" class="text-[#5279bf] hover:underline">+ Create New Article</a>
 
 		<form action="/logout?/logout" method="POST">
-			<button type="submit" class="text-red-500 hover:underline">Logout</button>
+			<button type="submit" class="text-[#bf5650] hover:underline">Logout</button>
 		</form>
 	</div>
 
