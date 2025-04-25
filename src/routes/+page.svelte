@@ -12,7 +12,7 @@
 				<img src={article.image} alt="articleImage" class="w-full h-80 object-cover hover:scale-105 transition-transform duration-300" />
 			</a>
 			<div class="p-4 text-center">
-				<p class="text-sm font-semibold text-gray-600">Votes: {article.votes}</p>
+				<p class="text-sm font-bold text-gray-600">Votes: {article.votes}</p>
 			</div>
 		</div>
 	{/each}
